@@ -1,0 +1,1 @@
+export class PaletteRenderContext { constructor(palette = []) { this.palette = palette; } }

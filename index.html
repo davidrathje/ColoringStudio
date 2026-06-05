@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Coloring Studio (CS)</title></head>
+<body>
+    <h1>CS Production Engine</h1>
+    <button id="run">Execute RC1</button>
+    <script type="module">
+        import { drawCombinedPlanPng } from './src/printRenderer.js';
+        document.getElementById('run').addEventListener('click', async () => {
+            const res = await fetch('./data/medium/Ohuhu_Master.xlsx');
+            if(!res.ok) throw new Error("Failed to load Excel data");
+            console.log("Data stream initialized.");
+            const canvas = drawCombinedPlanPng();
+            alert("RC1 Rendering Triggered");
+        });
+    </script>
+</body>
+</html>
